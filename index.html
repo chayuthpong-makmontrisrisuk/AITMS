@@ -16,43 +16,13 @@
 </head>
 
 <body>
-  <p id="os"><b>OS:</b> </p>
-  <p id="language"><b>Language:</b> </p>
-  <p id="version"><b>Version:</b> </p>
-  <p id="isInClient"><b>isInClient:</b> </p>
-  <p id="accessToken"><b>AccessToken:</b> </p>
-  <img id="pictureUrl" width="25%">
-  <p id="userId"><b>userId:</b> </p>
-  <p id="displayName"><b>displayName:</b> </p>
-  <p id="statusMessage"><b>statusMessage:</b> </p>
-  <p id="decodedIDToken"><b>email:</b> </p>
-  <p id="type"><b>type:</b> </p>
-  <p id="viewType"><b>viewType:</b> </p>
-  <p id="utouId"><b>utouId:</b> </p>
-  <p id="roomId"><b>roomId:</b> </p>
-  <p id="groupId"><b>groupId:</b> </p>
-  <p id="friendship"><b>isFriendship:</b> </p>
-  <p id="scanCode"><b>Code:</b> </p>
-  <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
-  <p id="universalLink1"><b>Universal Link:</b> </p>
-  <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
-  <p><a href="liff/path/?param=9">Link to Path</a></p>
+ 
 
 
   <!--<img id="pictureUrl" width="25%">
   <p id="userId"></p>
   <p id="displayName"></p>
   <p id="statusMessage"></p>-->
-
-  <p id="getDecodedIDToken"></p>
-
-  <button id="btnMsg" onclick="sendMsg()">Send Message</button>
-  <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
-  <button onclick="openWindow()">Open Window</button>
-  <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
-  <button id="btnLogOut" onclick="logOut()">Log Out</button>
-  <button id="btnClose" onclick="closed()">Close</button>
-
   <!-- <script src="js/vconsole.min.js"></script> -->
   <!-- <script>
     var vConsole = new VConsole()
@@ -69,16 +39,44 @@
         <h3>Column 1</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p id="os"><b>OS:</b> </p>
+        <p id="language"><b>Language:</b> </p>
+        <p id="version"><b>Version:</b> </p>
+        <p id="isInClient"><b>isInClient:</b> </p>
+        <p id="accessToken"><b>AccessToken:</b> </p>
+        <img id="pictureUrl" width="25%">
+        <p id="userId"><b>userId:</b> </p>
+        <p id="displayName"><b>displayName:</b> </p>
+        <p id="statusMessage"><b>statusMessage:</b> </p>
+        <p id="decodedIDToken"><b>email:</b> </p>
+        <p id="type"><b>type:</b> </p>
+        <p id="viewType"><b>viewType:</b> </p>
+        <p id="utouId"><b>utouId:</b> </p>
+        <p id="roomId"><b>roomId:</b> </p>
+        <p id="groupId"><b>groupId:</b> </p>
+        <p id="friendship"><b>isFriendship:</b> </p>
+        <p id="scanCode"><b>Code:</b> </p>
+        <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
+        <p id="universalLink1"><b>Universal Link:</b> </p>
+        <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
+        <p><a href="liff/path/?param=9">Link to Path</a></p>
       </div>
       <div class="col-sm-4">
         <h3>Column 2</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p id="getIDToken"></p>
       </div>
       <div class="col-sm-4">
         <h3>Column 3</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <button id="btnMsg" onclick="sendMsg()">Send Message</button>
+  <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
+  <button onclick="openWindow()">Open Window</button>
+  <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
+  <button id="btnLogOut" onclick="logOut()">Log Out</button>
+  <button id="btnClose" onclick="closed()">Close</button>
       </div>
     </div>
   </div>
@@ -138,7 +136,7 @@
         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
-        document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getIDToken().email;
+        document.getElementById("getIDToken").innerHTML = '<b>Email:</b> ' + liff.getIDToken();
       }).catch(err => console.error(err));
     }
 
