@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
   <title>My LIFF app</title>
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
+
 <body>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
   <p id="isInClient"><b>isInClient:</b> </p>
   <p id="accessToken"><b>AccessToken:</b> </p>
-  <img id="pictureUrl">
+  <!--<img id="pictureUrl">-->
   <p id="userId"><b>userId:</b> </p>
   <p id="displayName"><b>displayName:</b> </p>
   <p id="statusMessage"><b>statusMessage:</b> </p>
@@ -28,8 +30,8 @@
   <p id="universalLink1"><b>Universal Link:</b> </p>
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
-  
-  
+
+
   <img id="pictureUrl" width="25%">
   <p id="userId"></p>
   <p id="displayName"></p>
@@ -49,7 +51,7 @@
     console.log("Hello World!")
   </script> -->
 
-  <script src="https://static.line-scdn.net/liff/edge/versions/2.2.0/sdk.js"></script> 
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.2.0/sdk.js"></script>
   <script>
     function createUniversalLink() {
     }
@@ -86,14 +88,14 @@
       document.getElementById("language").append(liff.getLanguage())
       document.getElementById("version").append(liff.getVersion())
       document.getElementById("isInClient").append(liff.isInClient())
-      document.getElementById("accessToken").append(liff.getAccessToken()) 
-      
+      document.getElementById("accessToken").append(liff.getAccessToken())
+
       if (liff.isInClient()) {
-       document.getElementById("btnLogOut").style.display = "none"
+        document.getElementById("btnLogOut").style.display = "none"
       } else {
-       document.getElementById("btnMsg").style.display = "none"
-       document.getElementById("btnScanCode").style.display = "none"
-       document.getElementById("btnClose").style.display = "none"
+        document.getElementById("btnMsg").style.display = "none"
+        document.getElementById("btnScanCode").style.display = "none"
+        document.getElementById("btnClose").style.display = "none"
       }
     }
 
@@ -106,29 +108,29 @@
         document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
       }).catch(err => console.error(err));
     }
-    
+
     async function main() {
       alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1654873766-3Aym1ZLV" }, () => {
-      if (liff.isLoggedIn()) {
-        getEmail()
-        getEnvironment()
-      } else {
-        liff.login();
-      }
-    }, err => console.error(err.code, error.message));
-//getEmail()
+        if (liff.isLoggedIn()) {
+          getEmail()
+        } else {
+          liff.login();
+        }
+      }, err => console.error(err.code, error.message));
+      //getEmail()
       //await liff.init({ liffId: "1654873766-3Aym1ZLV" })
-      //getEnvironment()
+      getEnvironment()
       // getUserProfile()
       // getContext()
       // getFriendship()
       // createUniversalLink()
-      
+
     }
 
     main()
 
   </script>
 </body>
+
 </html>
