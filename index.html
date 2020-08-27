@@ -106,23 +106,25 @@
         document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
       }).catch(err => console.error(err));
     }
-    liff.init({ liffId: "YOUT-LIFF-ID" }, () => {
+    
+    async function main() {
+      alert("LINE Developers x Skooldio")
+      await liff.init({ liffId: "1654873766-3Aym1ZLV" }, () => {
       if (liff.isLoggedIn()) {
         getEmail()
+        getEnvironment()
       } else {
         liff.login();
       }
     }, err => console.error(err.code, error.message));
 
-    async function main() {
-      alert("LINE Developers x Skooldio")
-      await liff.init({ liffId: "1654873766-3Aym1ZLV" })
-      getEnvironment()
+      //await liff.init({ liffId: "1654873766-3Aym1ZLV" })
+      //getEnvironment()
       // getUserProfile()
       // getContext()
       // getFriendship()
       // createUniversalLink()
-      getEmail()
+      //getEmail()
     }
 
     main()
