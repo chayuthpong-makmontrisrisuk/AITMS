@@ -97,8 +97,7 @@
       }
     }
 
-    async function getEmail(){
-      
+    function getEmail() {
       liff.getProfile().then(profile => {
         document.getElementById("pictureUrl").src = profile.pictureUrl;
         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
@@ -106,9 +105,15 @@
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
         document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
       }).catch(err => console.error(err));
-    
-
     }
+    liff.init({ liffId: "YOUT-LIFF-ID" }, () => {
+      if (liff.isLoggedIn()) {
+        getEmail()
+      } else {
+        liff.login();
+      }
+    }, err => console.error(err.code, error.message));
+
     async function main() {
       alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1654873766-3Aym1ZLV" })
