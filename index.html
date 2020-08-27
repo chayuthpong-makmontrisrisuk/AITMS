@@ -112,6 +112,7 @@
     }
 
     async function getUserProfile() {
+
     }
 
     function getEnvironment() {
@@ -136,7 +137,7 @@
         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
-        document.getElementById("getIDToken").innerHTML = '<b>Email:</b> ' + liff.getIDToken();
+        document.getElementById("getIDToken").innerHTML = '<b>Email:</b> ' + liff.getIDToken().email;
       }).catch(err => console.error(err));
     }
 
