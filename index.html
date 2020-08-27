@@ -109,6 +109,12 @@
     }
 
     function getContext() {
+
+      document.getElementById("type").append(liff.getContext().type) 
+      document.getElementById("viewType").append(liff.getContext().viewType) 
+      document.getElementById("utouId").append(liff.getContext().utouId) 
+      document.getElementById("roomId").append(liff.getContext().roomId) 
+      document.getElementById("groupId").append(liff.getContext().groupId) 
     }
 
     async function getUserProfile() {
@@ -149,6 +155,8 @@
           alert("getEmail");
           getEnvironment();
           alert("getEnvironment");
+          getContext();
+          alert("getContext");
         } else {
           liff.login();
         }
@@ -157,7 +165,7 @@
       //await liff.init({ liffId: "1654873766-3Aym1ZLV" })
 
       // getUserProfile()
-      // getContext()
+      
       // getFriendship()
       // createUniversalLink()
 
