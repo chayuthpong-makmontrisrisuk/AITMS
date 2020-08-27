@@ -105,7 +105,7 @@
         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
-        document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
+        //document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
       }).catch(err => console.error(err));
     }
 
@@ -114,13 +114,14 @@
       await liff.init({ liffId: "1654873766-3Aym1ZLV" }, () => {
         if (liff.isLoggedIn()) {
           getEmail()
+          getEnvironment()
         } else {
           liff.login();
         }
       }, err => console.error(err.code, error.message));
       //getEmail()
       //await liff.init({ liffId: "1654873766-3Aym1ZLV" })
-      getEnvironment()
+      
       // getUserProfile()
       // getContext()
       // getFriendship()
